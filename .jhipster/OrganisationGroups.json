@@ -1,0 +1,26 @@
+{
+    "name": "OrganisationGroups",
+    "fields": [
+        {
+            "fieldName": "organisationGroup",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "organisationId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190211155425",
+    "entityTableName": "organisation_groups",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

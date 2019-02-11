@@ -1,0 +1,60 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="emisAuthApp6App.useCase.home.title">Use Cases</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-use-case" [routerLink]="['/use-case/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="emisAuthApp6App.useCase.home.createLabel">
+            Create new Use Case
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="useCases">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.useCase.useCaseName">Use Case Name</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.useCase.startDate">Start Date</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.useCase.endDate">End Date</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.useCase.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let useCase of useCases ;trackBy: trackId">
+                <td><a [routerLink]="['/use-case', useCase.id, 'view' ]">{{useCase.id}}</a></td>
+                <td>{{useCase.useCaseName}}</td>
+                <td>{{useCase.startDate | date:'medium'}}</td>
+                <td>{{useCase.endDate | date:'medium'}}</td>
+                <td>{{useCase.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/use-case', useCase.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/use-case', useCase.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'use-case', { outlets: { popup: useCase.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

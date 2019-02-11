@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-organisation-endpoint-heading" jhiTranslate="emisAuthApp6App.organisationEndpoint.home.createOrEditLabel">Create or edit a Organisation Endpoint</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!organisationEndpoint.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="organisationEndpoint.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.organisationEndpoint.orgGUID" for="field_orgGUID">Org GUID</label>
+                    <input type="text" class="form-control" name="orgGUID" id="field_orgGUID"
+                        [(ngModel)]="organisationEndpoint.orgGUID" required/>
+                    <div [hidden]="!(editForm.controls.orgGUID?.dirty && editForm.controls.orgGUID?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.orgGUID?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.organisationEndpoint.cbd" for="field_cbd">Cbd</label>
+                    <input type="text" class="form-control" name="cbd" id="field_cbd"
+                        [(ngModel)]="organisationEndpoint.cbd" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.organisationEndpoint.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="organisationEndpoint.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.organisationEndpoint.serverName" for="field_serverName">Server Name</label>
+                    <input type="text" class="form-control" name="serverName" id="field_serverName"
+                        [(ngModel)]="organisationEndpoint.serverName" required/>
+                    <div [hidden]="!(editForm.controls.serverName?.dirty && editForm.controls.serverName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.serverName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.organisationEndpoint.databaseName" for="field_databaseName">Database Name</label>
+                    <input type="text" class="form-control" name="databaseName" id="field_databaseName"
+                        [(ngModel)]="organisationEndpoint.databaseName" required/>
+                    <div [hidden]="!(editForm.controls.databaseName?.dirty && editForm.controls.databaseName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.databaseName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

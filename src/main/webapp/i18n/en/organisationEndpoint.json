@@ -1,0 +1,25 @@
+{
+    "emisAuthApp6App": {
+        "organisationEndpoint": {
+            "home": {
+                "title": "Organisation Endpoints",
+                "createLabel": "Create a new Organisation Endpoint",
+                "createOrEditLabel": "Create or edit a Organisation Endpoint"
+            },
+            "created": "A new Organisation Endpoint is created with identifier {{ param }}",
+            "updated": "A Organisation Endpoint is updated with identifier {{ param }}",
+            "deleted": "A Organisation Endpoint is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Organisation Endpoint {{ id }}?"
+            },
+            "detail": {
+                "title": "Organisation Endpoint"
+            },
+            "orgGUID": "Org GUID",
+            "cbd": "Cbd",
+            "name": "Name",
+            "serverName": "Server Name",
+            "databaseName": "Database Name"
+        }
+    }
+}

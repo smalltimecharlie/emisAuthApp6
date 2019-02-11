@@ -1,0 +1,28 @@
+{
+    "emisAuthApp6App": {
+        "agreementOrganisation": {
+            "home": {
+                "title": "Agreement Organisations",
+                "createLabel": "Create a new Agreement Organisation",
+                "createOrEditLabel": "Create or edit a Agreement Organisation"
+            },
+            "created": "A new Agreement Organisation is created with identifier {{ param }}",
+            "updated": "A Agreement Organisation is updated with identifier {{ param }}",
+            "deleted": "A Agreement Organisation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Agreement Organisation {{ id }}?"
+            },
+            "detail": {
+                "title": "Agreement Organisation"
+            },
+            "agreementId": "Agreement Id",
+            "agreementType": "Agreement Type",
+            "requestingOrgGuid": "Requesting Org Guid",
+            "sharingOrgGuid": "Sharing Org Guid",
+            "organisationId": "Organisation Id",
+            "agreementStatus": "Agreement Status",
+            "cretadDate": "Cretad Date",
+            "organisationEndpoint": "Organisation Endpoint"
+        }
+    }
+}

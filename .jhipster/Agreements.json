@@ -1,0 +1,19 @@
+{
+    "name": "Agreements",
+    "fields": [
+        {
+            "fieldName": "agreementUrl",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190211155422",
+    "entityTableName": "agreements",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

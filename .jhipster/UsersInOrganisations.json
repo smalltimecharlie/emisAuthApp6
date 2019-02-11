@@ -1,0 +1,23 @@
+{
+    "name": "UsersInOrganisations",
+    "fields": [
+        {
+            "fieldName": "organisation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190211155424",
+    "entityTableName": "users_in_organisations",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

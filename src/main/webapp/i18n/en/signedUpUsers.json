@@ -1,0 +1,28 @@
+{
+    "emisAuthApp6App": {
+        "signedUpUsers": {
+            "home": {
+                "title": "Signed Up Users",
+                "createLabel": "Create a new Signed Up Users",
+                "createOrEditLabel": "Create or edit a Signed Up Users"
+            },
+            "created": "A new Signed Up Users is created with identifier {{ param }}",
+            "updated": "A Signed Up Users is updated with identifier {{ param }}",
+            "deleted": "A Signed Up Users is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Signed Up Users {{ id }}?"
+            },
+            "detail": {
+                "title": "Signed Up Users"
+            },
+            "username": "Username",
+            "enabled": "Enabled",
+            "accountStatus": "Account Status",
+            "emailVerified": "Email Verified",
+            "phoneNumber": "Phone Number",
+            "email": "Email",
+            "updated": "Updated",
+            "created": "Created"
+        }
+    }
+}

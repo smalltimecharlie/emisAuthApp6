@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="signedUpUsers">
+            <h2><span jhiTranslate="emisAuthApp6App.signedUpUsers.detail.title">Signed Up Users</span> {{signedUpUsers.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.username">Username</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.username}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.enabled">Enabled</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.enabled}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.accountStatus">Account Status</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.accountStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.emailVerified">Email Verified</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.emailVerified}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.email">Email</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.updated">Updated</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.updated}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.signedUpUsers.created">Created</span></dt>
+                <dd>
+                    <span>{{signedUpUsers.created}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/signed-up-users', signedUpUsers.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

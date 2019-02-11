@@ -1,0 +1,22 @@
+{
+    "emisAuthApp6App": {
+        "usersInOrganisations": {
+            "home": {
+                "title": "Users In Organisations",
+                "createLabel": "Create a new Users In Organisations",
+                "createOrEditLabel": "Create or edit a Users In Organisations"
+            },
+            "created": "A new Users In Organisations is created with identifier {{ param }}",
+            "updated": "A Users In Organisations is updated with identifier {{ param }}",
+            "deleted": "A Users In Organisations is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Users In Organisations {{ id }}?"
+            },
+            "detail": {
+                "title": "Users In Organisations"
+            },
+            "organisation": "Organisation",
+            "username": "Username"
+        }
+    }
+}

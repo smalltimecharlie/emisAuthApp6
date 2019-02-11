@@ -1,0 +1,37 @@
+{
+    "emisAuthApp6App": {
+        "consent": {
+            "home": {
+                "title": "Consents",
+                "createLabel": "Create a new Consent",
+                "createOrEditLabel": "Create or edit a Consent"
+            },
+            "created": "A new Consent is created with identifier {{ param }}",
+            "updated": "A Consent is updated with identifier {{ param }}",
+            "deleted": "A Consent is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Consent {{ id }}?"
+            },
+            "detail": {
+                "title": "Consent"
+            },
+            "parentConsentId": "Parent Consent Id",
+            "entityKey": "Entity Key",
+            "entityKeyType": "Entity Key Type",
+            "fieldValue": "Field Value",
+            "endDate": "End Date",
+            "fieldName": "Field Name",
+            "signedDate": "Signed Date",
+            "startDate": "Start Date",
+            "active": "Active",
+            "authorisorName": "Authorisor Name",
+            "authorisorEmailAddress": "Authorisor Email Address",
+            "metadataKey": "Metadata Key",
+            "metadataValue": "Metadata Value",
+            "consentType": "Consent Type",
+            "agreement": "Agreement",
+            "user": "User",
+            "useCase": "Use Case"
+        }
+    }
+}

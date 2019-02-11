@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="consent">
+            <h2><span jhiTranslate="emisAuthApp6App.consent.detail.title">Consent</span> {{consent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emisAuthApp6App.consent.parentConsentId">Parent Consent Id</span></dt>
+                <dd>
+                    <span>{{consent.parentConsentId}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.entityKey">Entity Key</span></dt>
+                <dd>
+                    <span>{{consent.entityKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.entityKeyType">Entity Key Type</span></dt>
+                <dd>
+                    <span>{{consent.entityKeyType}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.fieldValue">Field Value</span></dt>
+                <dd>
+                    <span>{{consent.fieldValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{consent.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.fieldName">Field Name</span></dt>
+                <dd>
+                    <span>{{consent.fieldName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.signedDate">Signed Date</span></dt>
+                <dd>
+                    <span>{{consent.signedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{consent.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.active">Active</span></dt>
+                <dd>
+                    <span>{{consent.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.authorisorName">Authorisor Name</span></dt>
+                <dd>
+                    <span>{{consent.authorisorName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.authorisorEmailAddress">Authorisor Email Address</span></dt>
+                <dd>
+                    <span>{{consent.authorisorEmailAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.metadataKey">Metadata Key</span></dt>
+                <dd>
+                    <span>{{consent.metadataKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.metadataValue">Metadata Value</span></dt>
+                <dd>
+                    <span>{{consent.metadataValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.consentType">Consent Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'emisAuthApp6App.ConsentType.' + consent.consentType}}">{{consent.consentType}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.agreement">Agreement</span></dt>
+                <dd>
+                    <div *ngIf="consent.agreement">
+                        <a [routerLink]="['/agreements', consent.agreement?.id, 'view']">{{consent.agreement?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.user">User</span></dt>
+                <dd>
+                    <div *ngIf="consent.user">
+                        <a [routerLink]="['/signed-up-users', consent.user?.id, 'view']">{{consent.user?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.consent.useCase">Use Case</span></dt>
+                <dd>
+                    <div *ngIf="consent.useCase">
+                        <a [routerLink]="['/use-case', consent.useCase?.id, 'view']">{{consent.useCase?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/consent', consent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
