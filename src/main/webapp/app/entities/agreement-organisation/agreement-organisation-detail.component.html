@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agreementOrganisation">
+            <h2><span jhiTranslate="emisAuthApp6App.agreementOrganisation.detail.title">Agreement Organisation</span> {{agreementOrganisation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementId">Agreement Id</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.agreementId}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementType">Agreement Type</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.agreementType}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.requestingOrgGuid">Requesting Org Guid</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.requestingOrgGuid}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.sharingOrgGuid">Sharing Org Guid</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.sharingOrgGuid}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.organisationId">Organisation Id</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.organisationId}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementStatus">Agreement Status</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.agreementStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.cretadDate">Cretad Date</span></dt>
+                <dd>
+                    <span>{{agreementOrganisation.cretadDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.agreementOrganisation.organisationEndpoint">Organisation Endpoint</span></dt>
+                <dd>
+                    <div *ngIf="agreementOrganisation.organisationEndpoint">
+                        <a [routerLink]="['/organisation-endpoint', agreementOrganisation.organisationEndpoint?.id, 'view']">{{agreementOrganisation.organisationEndpoint?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agreement-organisation', agreementOrganisation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

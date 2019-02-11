@@ -1,0 +1,52 @@
+{
+    "name": "SignedUpUsers",
+    "fields": [
+        {
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "enabled",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "accountStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "emailVerified",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "phoneNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+        },
+        {
+            "fieldName": "updated",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "created",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190211155423",
+    "entityTableName": "signed_up_users",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

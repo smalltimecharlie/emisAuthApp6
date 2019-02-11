@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-consent-heading" jhiTranslate="emisAuthApp6App.consent.home.createOrEditLabel">Create or edit a Consent</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!consent.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="consent.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.parentConsentId" for="field_parentConsentId">Parent Consent Id</label>
+                    <input type="text" class="form-control" name="parentConsentId" id="field_parentConsentId"
+                        [(ngModel)]="consent.parentConsentId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.entityKey" for="field_entityKey">Entity Key</label>
+                    <input type="text" class="form-control" name="entityKey" id="field_entityKey"
+                        [(ngModel)]="consent.entityKey" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.entityKeyType" for="field_entityKeyType">Entity Key Type</label>
+                    <input type="text" class="form-control" name="entityKeyType" id="field_entityKeyType"
+                        [(ngModel)]="consent.entityKeyType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.fieldValue" for="field_fieldValue">Field Value</label>
+                    <input type="text" class="form-control" name="fieldValue" id="field_fieldValue"
+                        [(ngModel)]="consent.fieldValue" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" [(ngModel)]="endDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.fieldName" for="field_fieldName">Field Name</label>
+                    <input type="text" class="form-control" name="fieldName" id="field_fieldName"
+                        [(ngModel)]="consent.fieldName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.signedDate" for="field_signedDate">Signed Date</label>
+                    <div class="d-flex">
+                        <input id="field_signedDate" type="datetime-local" class="form-control" name="signedDate" [(ngModel)]="signedDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="startDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                        [(ngModel)]="consent.active" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.authorisorName" for="field_authorisorName">Authorisor Name</label>
+                    <input type="text" class="form-control" name="authorisorName" id="field_authorisorName"
+                        [(ngModel)]="consent.authorisorName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.authorisorEmailAddress" for="field_authorisorEmailAddress">Authorisor Email Address</label>
+                    <input type="text" class="form-control" name="authorisorEmailAddress" id="field_authorisorEmailAddress"
+                        [(ngModel)]="consent.authorisorEmailAddress" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.metadataKey" for="field_metadataKey">Metadata Key</label>
+                    <input type="text" class="form-control" name="metadataKey" id="field_metadataKey"
+                        [(ngModel)]="consent.metadataKey" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.metadataValue" for="field_metadataValue">Metadata Value</label>
+                    <input type="text" class="form-control" name="metadataValue" id="field_metadataValue"
+                        [(ngModel)]="consent.metadataValue" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.consentType" for="field_consentType">Consent Type</label>
+                    <select class="form-control" name="consentType" [(ngModel)]="consent.consentType" id="field_consentType" >
+                        <option value="Patient">{{'emisAuthApp6App.ConsentType.Patient' | translate}}</option>
+                        <option value="GP">{{'emisAuthApp6App.ConsentType.GP' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.agreement" for="field_agreement">Agreement</label>
+                    <select class="form-control" id="field_agreement" name="agreement" [(ngModel)]="consent.agreement" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="agreementsOption.id === consent.agreement?.id ? consent.agreement : agreementsOption" *ngFor="let agreementsOption of agreements; trackBy: trackAgreementsById">{{agreementsOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="consent.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="signedUpUsersOption.id === consent.user?.id ? consent.user : signedUpUsersOption" *ngFor="let signedUpUsersOption of signedupusers; trackBy: trackSignedUpUsersById">{{signedUpUsersOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.consent.useCase" for="field_useCase">Use Case</label>
+                    <select class="form-control" id="field_useCase" name="useCase" [(ngModel)]="consent.useCase" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="useCaseOption.id === consent.useCase?.id ? consent.useCase : useCaseOption" *ngFor="let useCaseOption of usecases; trackBy: trackUseCaseById">{{useCaseOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

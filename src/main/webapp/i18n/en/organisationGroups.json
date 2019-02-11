@@ -1,0 +1,22 @@
+{
+    "emisAuthApp6App": {
+        "organisationGroups": {
+            "home": {
+                "title": "Organisation Groups",
+                "createLabel": "Create a new Organisation Groups",
+                "createOrEditLabel": "Create or edit a Organisation Groups"
+            },
+            "created": "A new Organisation Groups is created with identifier {{ param }}",
+            "updated": "A Organisation Groups is updated with identifier {{ param }}",
+            "deleted": "A Organisation Groups is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Organisation Groups {{ id }}?"
+            },
+            "detail": {
+                "title": "Organisation Groups"
+            },
+            "organisationGroup": "Organisation Group",
+            "organisationId": "Organisation Id"
+        }
+    }
+}

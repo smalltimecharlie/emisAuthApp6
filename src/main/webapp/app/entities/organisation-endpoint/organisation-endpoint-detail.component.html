@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="organisationEndpoint">
+            <h2><span jhiTranslate="emisAuthApp6App.organisationEndpoint.detail.title">Organisation Endpoint</span> {{organisationEndpoint.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emisAuthApp6App.organisationEndpoint.orgGUID">Org GUID</span></dt>
+                <dd>
+                    <span>{{organisationEndpoint.orgGUID}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.organisationEndpoint.cbd">Cbd</span></dt>
+                <dd>
+                    <span>{{organisationEndpoint.cbd}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.organisationEndpoint.name">Name</span></dt>
+                <dd>
+                    <span>{{organisationEndpoint.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.organisationEndpoint.serverName">Server Name</span></dt>
+                <dd>
+                    <span>{{organisationEndpoint.serverName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.organisationEndpoint.databaseName">Database Name</span></dt>
+                <dd>
+                    <span>{{organisationEndpoint.databaseName}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/organisation-endpoint', organisationEndpoint.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

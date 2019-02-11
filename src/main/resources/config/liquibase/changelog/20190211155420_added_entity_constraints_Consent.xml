@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Consent.
+    -->
+    <changeSet id="20190211155420-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="agreement_id"
+                                 baseTableName="consent"
+                                 constraintName="fk_consent_agreement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="agreements"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="consent"
+                                 constraintName="fk_consent_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="signed_up_users"/>
+
+        <addForeignKeyConstraint baseColumnNames="use_case_id"
+                                 baseTableName="consent"
+                                 constraintName="fk_consent_use_case_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="use_case"/>
+
+    </changeSet>
+</databaseChangeLog>

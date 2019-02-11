@@ -1,0 +1,9 @@
+{
+    "emisAuthApp6App": {
+        "ConsentType": {
+            "null": "",
+            "Patient": "Patient",
+            "GP": "GP"
+        }
+    }
+}

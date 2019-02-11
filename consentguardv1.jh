@@ -1,0 +1,87 @@
+entity Consent { 
+	parentConsentId String 
+	entityKey String, 
+	entityKeyType String, 
+	fieldValue String, 
+	endDate Instant, 
+	fieldName String, 
+	signedDate Instant, 
+	startDate Instant, 
+	active Boolean, 
+	authorisorName String, 
+	authorisorEmailAddress String, 
+	metadataKey String, 
+	metadataValue String, 
+	consentType ConsentType
+}
+
+entity UseCase {
+    useCaseName String
+    startDate Instant,
+    endDate Instant
+	active Boolean
+}
+
+entity Agreements {
+    agreementUrl String
+}
+
+entity SignedUpUsers {
+    username String
+    enabled String,
+    accountStatus String,
+	emailVerified Boolean,
+    phoneNumber String,
+    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+    updated Instant,
+    created Instant
+}
+
+entity UsersInOrganisations {
+    organisation String,
+    username String
+}
+
+
+entity OrganisationGroups {
+	organisationGroup String required,
+    organisationId String
+}
+
+entity AgreementOrganisation
+{
+    agreementId String required,
+    agreementType String required,
+    requestingOrgGuid String required,
+    sharingOrgGuid String required,
+    organisationId String required,
+    agreementStatus String required,
+    cretadDate Instant 
+}
+
+entity OrganisationEndpoint
+{
+	orgGUID String required,
+    cbd String,
+    name String,
+    serverName String required,
+    databaseName String required
+}
+
+enum ConsentType {
+    Patient, GP
+}
+
+
+relationship ManyToOne {
+	Consent{agreement} to Agreements,
+    Consent{user} to SignedUpUsers,
+    AgreementOrganisation{organisationEndpoint} to OrganisationEndpoint
+}
+
+
+relationship ManyToOne {
+	Consent{useCase} to UseCase
+}
+
+

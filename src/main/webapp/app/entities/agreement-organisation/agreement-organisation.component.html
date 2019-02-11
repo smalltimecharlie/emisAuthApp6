@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="emisAuthApp6App.agreementOrganisation.home.title">Agreement Organisations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-agreement-organisation" [routerLink]="['/agreement-organisation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="emisAuthApp6App.agreementOrganisation.home.createLabel">
+            Create new Agreement Organisation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="agreementOrganisations">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementId">Agreement Id</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementType">Agreement Type</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.requestingOrgGuid">Requesting Org Guid</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.sharingOrgGuid">Sharing Org Guid</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.organisationId">Organisation Id</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementStatus">Agreement Status</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.cretadDate">Cretad Date</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.agreementOrganisation.organisationEndpoint">Organisation Endpoint</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let agreementOrganisation of agreementOrganisations ;trackBy: trackId">
+                <td><a [routerLink]="['/agreement-organisation', agreementOrganisation.id, 'view' ]">{{agreementOrganisation.id}}</a></td>
+                <td>{{agreementOrganisation.agreementId}}</td>
+                <td>{{agreementOrganisation.agreementType}}</td>
+                <td>{{agreementOrganisation.requestingOrgGuid}}</td>
+                <td>{{agreementOrganisation.sharingOrgGuid}}</td>
+                <td>{{agreementOrganisation.organisationId}}</td>
+                <td>{{agreementOrganisation.agreementStatus}}</td>
+                <td>{{agreementOrganisation.cretadDate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="agreementOrganisation.organisationEndpoint">
+                        <a [routerLink]="['../organisation-endpoint', agreementOrganisation.organisationEndpoint?.id, 'view' ]" >{{agreementOrganisation.organisationEndpoint?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/agreement-organisation', agreementOrganisation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/agreement-organisation', agreementOrganisation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'agreement-organisation', { outlets: { popup: agreementOrganisation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

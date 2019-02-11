@@ -8,6 +8,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "consent": "Consent",
+                "useCase": "Use Case",
+                "agreements": "Agreements",
+                "signedUpUsers": "Signed Up Users",
+                "usersInOrganisations": "Users In Organisations",
+                "organisationGroups": "Organisation Groups",
+                "agreementOrganisation": "Agreement Organisation",
+                "organisationEndpoint": "Organisation Endpoint",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

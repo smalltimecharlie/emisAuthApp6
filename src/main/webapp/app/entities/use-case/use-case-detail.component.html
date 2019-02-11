@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="useCase">
+            <h2><span jhiTranslate="emisAuthApp6App.useCase.detail.title">Use Case</span> {{useCase.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emisAuthApp6App.useCase.useCaseName">Use Case Name</span></dt>
+                <dd>
+                    <span>{{useCase.useCaseName}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.useCase.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{useCase.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.useCase.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{useCase.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.useCase.active">Active</span></dt>
+                <dd>
+                    <span>{{useCase.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/use-case', useCase.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

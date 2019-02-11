@@ -1,0 +1,94 @@
+{
+    "name": "Consent",
+    "fields": [
+        {
+            "fieldName": "parentConsentId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "entityKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "entityKeyType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fieldValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "fieldName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signedDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "authorisorName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "authorisorEmailAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metadataKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metadataValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "consentType",
+            "fieldType": "ConsentType",
+            "fieldValues": "Patient,GP"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "agreement",
+            "otherEntityName": "agreements",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "consent"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "signedUpUsers",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "consent"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "useCase",
+            "otherEntityName": "useCase",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "consent"
+        }
+    ],
+    "changelogDate": "20190211155420",
+    "entityTableName": "consent",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

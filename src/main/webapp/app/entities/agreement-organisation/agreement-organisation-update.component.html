@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-agreement-organisation-heading" jhiTranslate="emisAuthApp6App.agreementOrganisation.home.createOrEditLabel">Create or edit a Agreement Organisation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!agreementOrganisation.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="agreementOrganisation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementId" for="field_agreementId">Agreement Id</label>
+                    <input type="text" class="form-control" name="agreementId" id="field_agreementId"
+                        [(ngModel)]="agreementOrganisation.agreementId" required/>
+                    <div [hidden]="!(editForm.controls.agreementId?.dirty && editForm.controls.agreementId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.agreementId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementType" for="field_agreementType">Agreement Type</label>
+                    <input type="text" class="form-control" name="agreementType" id="field_agreementType"
+                        [(ngModel)]="agreementOrganisation.agreementType" required/>
+                    <div [hidden]="!(editForm.controls.agreementType?.dirty && editForm.controls.agreementType?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.agreementType?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.requestingOrgGuid" for="field_requestingOrgGuid">Requesting Org Guid</label>
+                    <input type="text" class="form-control" name="requestingOrgGuid" id="field_requestingOrgGuid"
+                        [(ngModel)]="agreementOrganisation.requestingOrgGuid" required/>
+                    <div [hidden]="!(editForm.controls.requestingOrgGuid?.dirty && editForm.controls.requestingOrgGuid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.requestingOrgGuid?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.sharingOrgGuid" for="field_sharingOrgGuid">Sharing Org Guid</label>
+                    <input type="text" class="form-control" name="sharingOrgGuid" id="field_sharingOrgGuid"
+                        [(ngModel)]="agreementOrganisation.sharingOrgGuid" required/>
+                    <div [hidden]="!(editForm.controls.sharingOrgGuid?.dirty && editForm.controls.sharingOrgGuid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.sharingOrgGuid?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.organisationId" for="field_organisationId">Organisation Id</label>
+                    <input type="text" class="form-control" name="organisationId" id="field_organisationId"
+                        [(ngModel)]="agreementOrganisation.organisationId" required/>
+                    <div [hidden]="!(editForm.controls.organisationId?.dirty && editForm.controls.organisationId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.organisationId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.agreementStatus" for="field_agreementStatus">Agreement Status</label>
+                    <input type="text" class="form-control" name="agreementStatus" id="field_agreementStatus"
+                        [(ngModel)]="agreementOrganisation.agreementStatus" required/>
+                    <div [hidden]="!(editForm.controls.agreementStatus?.dirty && editForm.controls.agreementStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.agreementStatus?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.cretadDate" for="field_cretadDate">Cretad Date</label>
+                    <div class="d-flex">
+                        <input id="field_cretadDate" type="datetime-local" class="form-control" name="cretadDate" [(ngModel)]="cretadDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.agreementOrganisation.organisationEndpoint" for="field_organisationEndpoint">Organisation Endpoint</label>
+                    <select class="form-control" id="field_organisationEndpoint" name="organisationEndpoint" [(ngModel)]="agreementOrganisation.organisationEndpoint" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organisationEndpointOption.id === agreementOrganisation.organisationEndpoint?.id ? agreementOrganisation.organisationEndpoint : organisationEndpointOption" *ngFor="let organisationEndpointOption of organisationendpoints; trackBy: trackOrganisationEndpointById">{{organisationEndpointOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

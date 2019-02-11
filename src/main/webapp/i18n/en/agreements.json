@@ -1,0 +1,21 @@
+{
+    "emisAuthApp6App": {
+        "agreements": {
+            "home": {
+                "title": "Agreements",
+                "createLabel": "Create a new Agreements",
+                "createOrEditLabel": "Create or edit a Agreements"
+            },
+            "created": "A new Agreements is created with identifier {{ param }}",
+            "updated": "A Agreements is updated with identifier {{ param }}",
+            "deleted": "A Agreements is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Agreements {{ id }}?"
+            },
+            "detail": {
+                "title": "Agreements"
+            },
+            "agreementUrl": "Agreement Url"
+        }
+    }
+}
