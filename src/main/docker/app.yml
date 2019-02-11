@@ -5,7 +5,7 @@ services:
         environment:
             - _JAVA_OPTIONS=-Xmx512m -Xms256m
             - SPRING_PROFILES_ACTIVE=prod,swagger
-            - SPRING_DATASOURCE_URL=jdbc:mariadb://emisauthapp6-mariadb:3306/emisauthapp6
+            - SPRING_DATASOURCE_URL=jdbc:mariadb://${MARIA_DB_HOST}:3306/${MARIA_DB_SCHEMA}
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
             - 8080:8080
