@@ -16,7 +16,7 @@ The following environment variables need to be set
 ```
 MARIA_DB_USER=database_user
 MARIA_DB_PASSWORD=******
-MARIA_DB_HOST=rds_endpoint
+MARIA_DB_HOST=agreementinfo.*********.eu-west-2.rds.amazonaws.com
 MARIA_DB_SCHEMA=database_schema
 ```
 
