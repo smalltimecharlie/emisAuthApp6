@@ -13,6 +13,7 @@
     <include file="config/liquibase/changelog/20190211155425_added_entity_OrganisationGroups.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190211155426_added_entity_AgreementOrganisation.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190211155427_added_entity_OrganisationEndpoint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190212111111_added_entity_CognitoRegistrations.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190211155420_added_entity_constraints_Consent.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190211155426_added_entity_constraints_AgreementOrganisation.xml" relativeToChangelogFile="false"/>

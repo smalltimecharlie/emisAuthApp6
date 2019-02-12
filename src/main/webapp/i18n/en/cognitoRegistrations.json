@@ -1,0 +1,25 @@
+{
+    "emisAuthApp6App": {
+        "cognitoRegistrations": {
+            "home": {
+                "title": "Cognito Registrations",
+                "createLabel": "Create a new Cognito Registrations",
+                "createOrEditLabel": "Create or edit a Cognito Registrations"
+            },
+            "created": "A new Cognito Registrations is created with identifier {{ param }}",
+            "updated": "A Cognito Registrations is updated with identifier {{ param }}",
+            "deleted": "A Cognito Registrations is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cognito Registrations {{ id }}?"
+            },
+            "detail": {
+                "title": "Cognito Registrations"
+            },
+            "userPoolId": "User Pool Id",
+            "username": "Username",
+            "email": "Email",
+            "loggedDate": "Logged Date",
+            "cognitoEvent": "Cognito Event"
+        }
+    }
+}

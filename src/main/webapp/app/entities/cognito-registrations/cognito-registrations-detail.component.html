@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cognitoRegistrations">
+            <h2><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.detail.title">Cognito Registrations</span> {{cognitoRegistrations.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.userPoolId">User Pool Id</span></dt>
+                <dd>
+                    <span>{{cognitoRegistrations.userPoolId}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.username">Username</span></dt>
+                <dd>
+                    <span>{{cognitoRegistrations.username}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.email">Email</span></dt>
+                <dd>
+                    <span>{{cognitoRegistrations.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.loggedDate">Logged Date</span></dt>
+                <dd>
+                    <span>{{cognitoRegistrations.loggedDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.cognitoEvent">Cognito Event</span></dt>
+                <dd>
+                    <span>{{cognitoRegistrations.cognitoEvent}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cognito-registrations', cognitoRegistrations.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -46,6 +46,7 @@ public class CacheConfiguration {
             cm.createCache(io.github.jhipster.application.domain.OrganisationGroups.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.AgreementOrganisation.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.jhipster.application.domain.OrganisationEndpoint.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.jhipster.application.domain.CognitoRegistrations.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

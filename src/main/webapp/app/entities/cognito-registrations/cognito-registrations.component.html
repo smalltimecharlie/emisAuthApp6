@@ -1,0 +1,62 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="emisAuthApp6App.cognitoRegistrations.home.title">Cognito Registrations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cognito-registrations" [routerLink]="['/cognito-registrations/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="emisAuthApp6App.cognitoRegistrations.home.createLabel">
+            Create new Cognito Registrations
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="cognitoRegistrations">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.userPoolId">User Pool Id</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.username">Username</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.email">Email</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.loggedDate">Logged Date</span></th>
+            <th><span jhiTranslate="emisAuthApp6App.cognitoRegistrations.cognitoEvent">Cognito Event</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cognitoRegistrations of cognitoRegistrations ;trackBy: trackId">
+                <td><a [routerLink]="['/cognito-registrations', cognitoRegistrations.id, 'view' ]">{{cognitoRegistrations.id}}</a></td>
+                <td>{{cognitoRegistrations.userPoolId}}</td>
+                <td>{{cognitoRegistrations.username}}</td>
+                <td>{{cognitoRegistrations.email}}</td>
+                <td>{{cognitoRegistrations.loggedDate | date:'medium'}}</td>
+                <td>{{cognitoRegistrations.cognitoEvent}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/cognito-registrations', cognitoRegistrations.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cognito-registrations', cognitoRegistrations.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'cognito-registrations', { outlets: { popup: cognitoRegistrations.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
