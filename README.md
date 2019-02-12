@@ -1,5 +1,16 @@
 # EMIS Deployment instructions 
 
+
+The following prequisites need to be met: 
+
+.Docker and Docker compose installed
+.Java installed
+.Git and maven installed
+.NPM and node installed
+.JAVA_HOME and MVN_HOME environment variables setup
+
+
+
 The following environment variables need to be set
 
 ```
@@ -15,6 +26,8 @@ Then run
 ./mvnw package -Pprod verify jib:dockerBuild
 docker-compose -f src/main/docker/app.yml up -d
 ```
+
+Note that the database schema must exist and that the container must be able to access the database or the app will fail to startup. 
 
 # emisAuthApp6
 
