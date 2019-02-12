@@ -68,6 +68,15 @@ entity OrganisationEndpoint
     databaseName String required
 }
 
+entity CognitoRegistrations
+{
+	userPoolId String required,
+    username String required,
+    email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+    loggedDate Instant,
+    cognitoEvent String
+}
+
 enum ConsentType {
     Patient, GP
 }

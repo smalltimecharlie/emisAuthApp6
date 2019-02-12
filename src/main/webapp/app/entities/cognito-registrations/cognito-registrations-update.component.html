@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-cognito-registrations-heading" jhiTranslate="emisAuthApp6App.cognitoRegistrations.home.createOrEditLabel">Create or edit a Cognito Registrations</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!cognitoRegistrations.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="cognitoRegistrations.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.cognitoRegistrations.userPoolId" for="field_userPoolId">User Pool Id</label>
+                    <input type="text" class="form-control" name="userPoolId" id="field_userPoolId"
+                        [(ngModel)]="cognitoRegistrations.userPoolId" required/>
+                    <div [hidden]="!(editForm.controls.userPoolId?.dirty && editForm.controls.userPoolId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.userPoolId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.cognitoRegistrations.username" for="field_username">Username</label>
+                    <input type="text" class="form-control" name="username" id="field_username"
+                        [(ngModel)]="cognitoRegistrations.username" required/>
+                    <div [hidden]="!(editForm.controls.username?.dirty && editForm.controls.username?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.username?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.cognitoRegistrations.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="cognitoRegistrations.email" required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"/>
+                    <div [hidden]="!(editForm.controls.email?.dirty && editForm.controls.email?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.email?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.email?.errors?.pattern" jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Email' }">
+                            This field should follow pattern for "Email".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.cognitoRegistrations.loggedDate" for="field_loggedDate">Logged Date</label>
+                    <div class="d-flex">
+                        <input id="field_loggedDate" type="datetime-local" class="form-control" name="loggedDate" [(ngModel)]="loggedDate" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="emisAuthApp6App.cognitoRegistrations.cognitoEvent" for="field_cognitoEvent">Cognito Event</label>
+                    <input type="text" class="form-control" name="cognitoEvent" id="field_cognitoEvent"
+                        [(ngModel)]="cognitoRegistrations.cognitoEvent" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

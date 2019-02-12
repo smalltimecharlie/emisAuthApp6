@@ -16,6 +16,7 @@
                 "organisationGroups": "Organisation Groups",
                 "agreementOrganisation": "Agreement Organisation",
                 "organisationEndpoint": "Organisation Endpoint",
+                "cognitoRegistrations": "Cognito Registrations",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
