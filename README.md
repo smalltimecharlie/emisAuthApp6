@@ -1,3 +1,21 @@
+# EMIS Deployment instructions 
+
+The following environment variables need to be set
+
+```
+MARIA_DB_USER=database_user
+MARIA_DB_PASSWORD=******
+MARIA_DB_HOST=rds_endpoint
+MARIA_DB_SCHEMA=database_schema
+```
+
+Then run 
+
+```
+./mvnw package -Pprod verify jib:dockerBuild
+docker-compose -f src/main/docker/app.yml up -d
+```
+
 # emisAuthApp6
 
 This application was generated using JHipster 5.8.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.8.1](https://www.jhipster.tech/documentation-archive/v5.8.1).
