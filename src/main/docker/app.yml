@@ -3,6 +3,10 @@ services:
     emisauthapp6-app:
         image: emisauthapp6
         environment:
+            - MARIA_DB_USER=${MARIA_DB_USER}
+            - MARIA_DB_PASSWORD=${MARIA_DB_PASSWORD}
+            - MARIA_DB_HOST=${MARIA_DB_HOST}
+            - MARIA_DB_SCHEMA=${MARIA_DB_SCHEMA}
             - _JAVA_OPTIONS=-Xmx512m -Xms256m
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_DATASOURCE_URL=jdbc:mariadb://${MARIA_DB_HOST}:3306/${MARIA_DB_SCHEMA}
